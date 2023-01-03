@@ -1,0 +1,63 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+     "responses": ["Hello, thanks for asking. \n Type 'what can you do' to find out what services I provide.", "Hi there. Type 'what can you do' to find out what services I provide.", "Hello! Welcome to the Quote Bot. Type 'what can you do' to find out what services I provide."],
+     "context": [""]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+     "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+     "context": [""]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure"],
+     "context": [""]
+    },
+    {"tag": "noanswer",
+     "patterns": [],
+     "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+     "context": [""]
+    },
+    {"tag": "options",
+     "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered", "What services you provide?"],
+     "responses": ["I can provide you with a car insurance quote. Enter your car model, e.g., Honda, Nissan, Chevrolet, Ford, Hyundai, Mercedes, etc.", "I am a car insurance quote bot. Enter your car model to proceed, e.g., Honda, Nissan, Chevrolet, Ford, Hyundai, Mercedes."],
+     "context": ["car_model"]
+    },
+    {"tag": "car_model",
+        "patterns": ["Honda", "Toyota", "Hyundai", "Nissan", "Ford", "Chevrolet", "Mercedes"],
+        "responses": ["What was the year of manufacture? e.g., 2010, 2020, etc.", "When was your car manufactured? e.g., 2020,2022."],
+        "context": ["car_year_manufactured"]
+    },
+    {"tag": "car_year_manufactured",
+        "patterns": ["2010", "2018", "2019", "2020", "2021", "2022"],
+        "responses": ["How many accident claims have you made on that car before? e.g., 0, 1, 2, 3, ..., many, I don't know, etc."],
+        "context": ["claims_made"]
+    },
+    {"tag": "claims_made",
+        "patterns": ["0", "1", "2", "3", "I don't know"],
+        "responses": ["$2,440 per year (for 0-3 claims). Are you satisfied with the quote price?", "$120 per month (for 0-3 claims). Are you satisfied with the quote price?"],
+        "context": ["quote_satisfaction"]
+    },
+    {"tag": "claims_made_1",
+        "patterns": ["4", "5", "6", "many", "I don't know"],
+        "responses": ["$4,000 per year (for 4 or more claims). Are you satisfied with the quote price?", "$200 monthly (for 4 or more claims). Are you satisfied with the quote price?", "$1,780 annually. Are you satisfied with the quote price?"],
+        "context": ["quote_satisfaction"]
+    },
+    {"tag": "quote_satisfaction",
+        "patterns": ["no", "not really", "hell no"],
+        "responses": ["You may talk to an agent by clicking on the following link https://www.microsoft.com/en-ca/microsoft-teams/log-in"],
+        "context": ["quote_satisfaction_reply"]
+    },     
+    {"tag": "quote_satisfaction_1",
+        "patterns": ["yes", "a bit", "yeah", "hell yeah"],
+        "responses": ["Please enter your email address by going to http://127.0.0.1:5000/user. We will email you a quote."],
+        "context": ["email_request"]
+    },
+        {"tag": "email_request",
+        "patterns": ["gaithuru5629@saskpolytech.ca", "julesbabej@gmail.com", "june@gmail.com", "@hotmail.com"],
+        "responses": ["Your quote is on it's way."],
+        "context": []
+    }                 
+]
+}
