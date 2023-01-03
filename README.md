@@ -14,9 +14,11 @@ Bot sequence:
 4. How many accident claims have you had on that car before?
 5. Satisfied?
 
-##Links:
+Links:
+
 Flask Chatbot
 Reference: https://buffml.com/web-based-chatbot-using-flask-api/
 
-##Email app:
+Email app:
+
 https://mailtrap.io/blog/flask-email-sending/
